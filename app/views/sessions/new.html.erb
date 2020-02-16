@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1>Bird Catcher</h1>
 
 <% if @login_error %>
 
@@ -12,12 +12,12 @@
 
 <%= form_tag '/login' do %>
 	<p>
-		<%= label_tag :username %>
+		<%= label_tag :usuario %>
 		<%= text_field_tag :username %>
 	</p>
 
 	<p>
-		<%= label_tag :password %>
+		<%= label_tag :senha %>
 		<%= password_field_tag :password %>
 	</p>
 

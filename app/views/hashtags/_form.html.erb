@@ -1,0 +1,9 @@
+<%= form_with(model: [ @user, @user.hashtags.build ]) do |form| %>
+  <p>
+    <%= form.label :hashtag %><br>
+    <%= form.text_field :value %>
+  </p>
+  <p>
+    <%= form.submit "Cadastrar Hashtag" %>
+  </p>
+<% end %>

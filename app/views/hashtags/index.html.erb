@@ -4,16 +4,11 @@
 
 <table>
 
-<tr>
-	<th>Hashtag</th>
-	<th></th>
-</tr>
-
 <% @user.hashtags.each do |hashtag| %>
 
 <tr>
 	<td><%= hashtag.value %></td>
-	<td><%= button_to 'Delete Hashtag', [@user, hashtag], 
+	<td><%= button_to 'Remover Hashtag', [@user, hashtag], 
 		method: :delete,
 		data: { confirm: 'Are you sure?' } %></td>
 </tr>
@@ -27,3 +22,5 @@
 <p>Não há hashtags cadastradas!</p>
 
 <% end %>
+
+<%= render 'hashtags/form' %>

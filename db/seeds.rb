@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(username:'Admin', password_digest: BCrypt::Password.create("senha@123"))
+User.create!(username:'user', password_digest: BCrypt::Password.create("senha"))

@@ -10,14 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_16_145153) do
+ActiveRecord::Schema.define(version: 2020_02_16_200440) do
 
   create_table "hashtags", force: :cascade do |t|
     t.string "value"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_hashtags_on_user_id"
+  end
+
+  create_table "user_hashtags", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hashtag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -27,5 +32,4 @@ ActiveRecord::Schema.define(version: 2020_02_16_145153) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "hashtags", "users"
 end
