@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_16_210657) do
+ActiveRecord::Schema.define(version: 2020_02_18_235107) do
+
+  create_table "crono_jobs", force: :cascade do |t|
+    t.string "job_id", null: false
+    t.text "log", limit: 1073741823
+    t.datetime "last_performed_at"
+    t.boolean "healthy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_crono_jobs_on_job_id", unique: true
+  end
 
   create_table "hashtag_messages", force: :cascade do |t|
     t.integer "hashtag_id"
@@ -26,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_210657) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.bigint "twitter_id"
     t.string "author"
     t.text "body"
     t.datetime "publication_date"

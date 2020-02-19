@@ -1,6 +1,10 @@
 <h1>Messages</h1>
 
+<%= debug @tweets %>
+
 <% @tweets.each do |tweet| %>
-  User @<%= tweet.user.screen_name %> said: "<%= tweet.text %>" on <%= tweet.created_at.strftime('%-m/%d/%Y') %>
+  <strong>User</strong> @<%= tweet.user.screen_name %> 
+  <strong>said:</strong> "<%= tweet.text %>" 
+  <strong>on</strong> <%= tweet.created_at.strftime('%-m/%d/%Y') %>
   <br>
 <% end %>
