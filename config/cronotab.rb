@@ -14,4 +14,4 @@
 # Crono.perform(TestJob).every 2.days, at: '15:30'
 #
 
-Crono.perform(TweetCollectorJob).every 3.minutes
+Crono.perform(TweetCollectorJob).every 5.minutes
