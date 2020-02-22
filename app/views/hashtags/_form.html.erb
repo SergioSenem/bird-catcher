@@ -1,9 +1,11 @@
-<%= form_with(model: [ @user, @user.hashtags.build ]) do |form| %>
-  <p>
-    <%= form.label :hashtag %><br>
-    <%= form.text_field :value %>
-  </p>
-  <p>
-    <%= form.submit "Cadastrar Hashtag" %>
-  </p>
+<%= form_with(model: [ @user, @user.hashtags.build ], class: "form-inline row") do |form| %>
+		<div class="col-sm">
+	    	<%= form.label :nova_hashtag, class: "float-left" %>
+	    </div>
+	    <div class="col-sm">
+	    	<%= form.text_field :value, placeholder: "Digite a hashtag sem @", class: "form-control" %>
+	    </div>
+	    <div class="col-sm">
+	    	<%= form.submit "Cadastrar Hashtag", class: "btn btn-primary float-right" %>
+	    </div>
 <% end %>
