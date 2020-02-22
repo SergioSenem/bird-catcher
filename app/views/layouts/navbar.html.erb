@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>BirdCatcher</title>
+    	<%= csrf_meta_tags %>
+    	<%= csp_meta_tag %>
+
+    	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    	<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		  <a class="navbar-brand">Bird Catcher</a>
+		  <ul class="navbar-nav ml-auto">
+		  	<li class="nav-item">
+		  		<%= link_to "Sair", logout_path, class: "nav-link" %>
+		  	</li>
+		  </ul>
+		</nav>
+ 		<div class="container-fluid">
+	    	<div class="row">
+	        	<div class="col-sm"></div>      
+	        	<div class="col-sm">
+	          	<%= yield %>
+	        	</div>
+	        	<div class="col-sm"></div>
+	      	</div>
+    	</div>
+	</body>
+</html>

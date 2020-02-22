@@ -1,4 +1,5 @@
 class HashtagsController < ApplicationController
+	layout "navbar"
 
 	def index
 		@user = User.find(session[:user_id])

@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
   
   skip_before_action :authorized, only: [:new, :create, :welcome]	
 
-  def welcome; end
-
   def new
   end
 
@@ -17,5 +15,10 @@ class SessionsController < ApplicationController
   		@login_error = true
   		render 'new'
   	end
+  end
+
+  def end
+    session.delete(:user_id)
+    redirect_to root_path
   end
 end
