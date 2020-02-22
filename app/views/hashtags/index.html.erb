@@ -8,6 +8,7 @@
 
 <tr>
 	<td><%= hashtag.value %></td>
+	<td><%= link_to 'Exibir tweets', user_hashtag_path(@user, hashtag) %></td>
 	<td><%= button_to 'Remover Hashtag', [@user, hashtag], 
 		method: :delete,
 		data: { confirm: 'Are you sure?' } %></td>

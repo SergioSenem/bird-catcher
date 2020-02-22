@@ -22,7 +22,7 @@ class TweetCollectorJob < ApplicationJob
 	tweets = Hash.new
 
 	hashtags.each do |hashtag|
-		tweets[hashtag.id] = client.search(hashtag.value).take(100)
+		tweets[hashtag.id] = client.search("##{hashtag.value}").take(100)
 		tweets[hashtag.id] = remove_existing(tweets[hashtag.id])
 	end
 

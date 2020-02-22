@@ -1,0 +1,23 @@
+<h1>Hashtag: @<%= @hashtag.value %></h1>
+
+<h3>Mensagens:</h3>
+
+<table>
+
+<tr>
+	<th>Usuario</th>
+	<th>Mensagem</th>
+	<th>Data</th>
+</tr>
+
+<% @hashtag.messages.each do |message| %>
+
+<tr>
+	<td>@<%= message.author %></td>
+	<td>@<%= message.body %></td>
+	<td>@<%= message.publication_date %></td>
+</tr>
+
+<% end %>
+
+</table>

@@ -1,27 +1,22 @@
 <h1>Bird Catcher</h1>
 
 <% if @login_error %>
-
-	<p>Login ou senha incorretos!</p>
-
+	<div class="alert alert-danger" role="alert" id="alert">
+		Login ou senha incorretos!
+	</div>
 <% end %>
-
-<% unless @user.nil? %>
-	<p><%= users_path %></p>
-<% end %>
-
 <%= form_tag '/login' do %>
-	<p>
+	<div class="form-group">
 		<%= label_tag :usuario %>
-		<%= text_field_tag :username %>
-	</p>
+		<%= text_field_tag :username, '', placeholder: "Digite seu login", class: "form-control" %>
+	</div>
 
-	<p>
+	<div class="form-group">
 		<%= label_tag :senha %>
-		<%= password_field_tag :password %>
-	</p>
+		<%= password_field_tag :password, '', placeholder: "Digite sua senha", class: "form-control" %>
+	</div>
 
-	<p>
-		<%= submit_tag "Login" %>
-	</p>
+	<div class="form-group">
+		<%= submit_tag "Login", class: "col-sm-12 btn btn-primary" %>
+	</div>
 <% end %>
