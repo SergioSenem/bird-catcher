@@ -2,20 +2,20 @@
 
 <br>
 
-<% if @user.hashtags.count > 0 %>
+<% if @current_user.hashtags.count > 0 %>
 
-<% @user.hashtags.each do |hashtag| %>
+<% @current_user.hashtags.each do |hashtag| %>
 
 <div class="row">
 	<div class="col-sm"><%= hashtag.value %></div>
 	<div class="col-sm">
-		<%= link_to 'Exibir tweets', user_hashtag_path(@user, hashtag), class: "btn" %>
+		<%= link_to 'Exibir tweets', user_hashtag_path(@current_user, hashtag), class: "btn" %>
 	</div>
 	<div class="col-sm">
 		<div class="float-right">
-			<%= button_to 'Remover Hashtag', [@user, hashtag], 
+			<%= button_to 'Remover Hashtag', [@current_user, hashtag], 
 				method: :delete,
-				data: { confirm: 'Are you sure?' },
+				data: { confirm: 'Você tem certeza?' },
 				class: "btn btn-danger" %>
 		</div>
 	</div>

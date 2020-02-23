@@ -1,8 +1,10 @@
-<h1>Hashtag: @<%= @hashtag.value %></h1>
+<br>
 
-<h3>Mensagens:</h3>
+<h2>Mensagens da Hashtag: <b> #<%= @hashtag.value %> </b></h1>
 
-<table>
+<br>	
+
+<table class="table">
 
 <tr>
 	<th>Usuario</th>
@@ -14,8 +16,8 @@
 
 <tr>
 	<td>@<%= message.author %></td>
-	<td>@<%= message.body %></td>
-	<td>@<%= message.publication_date %></td>
+	<td><%= message.body %></td>
+	<td><%= message.publication_date.to_s(:db) %></td>
 </tr>
 
 <% end %>

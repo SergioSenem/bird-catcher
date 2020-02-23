@@ -1,9 +1,9 @@
-<%= form_with(model: [ @user, @user.hashtags.build ], class: "form-inline row") do |form| %>
+<%= form_with(model: [ @current_user, @current_user.hashtags.build ], class: "form-inline row") do |form| %>
 		<div class="col-sm">
 	    	<%= form.label :nova_hashtag, class: "float-left" %>
 	    </div>
 	    <div class="col-sm">
-	    	<%= form.text_field :value, placeholder: "Digite a hashtag sem @", class: "form-control" %>
+	    	<%= form.text_field :value, placeholder: "Digite a hashtag sem #", class: "form-control" %>
 	    </div>
 	    <div class="col-sm">
 	    	<%= form.submit "Cadastrar Hashtag", class: "btn btn-primary float-right" %>
