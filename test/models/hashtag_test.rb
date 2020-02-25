@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class HashtagTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+	test "should not save hashtag without value" do
+		hashtag = Hashtag.new
+
+		assert_not hashtag.save
+	end
 end
