@@ -35,18 +35,18 @@ ActiveRecord::Schema.define(version: 2020_02_18_235107) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "hashtags_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hashtag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.bigint "twitter_id"
     t.string "author"
     t.text "body"
     t.datetime "publication_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_hashtags", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "hashtag_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+one: 
   author: MyString
   body: MyText
   publication_date: 2020-02-16 18:05:55
 
-two:
+two: 
   author: MyString
   body: MyText
   publication_date: 2020-02-16 18:05:55

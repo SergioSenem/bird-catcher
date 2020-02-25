@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  hashtag_id: MyString
-  : 1
-  user_id: MyString
-  : 1
+one: 
+  hashtag_id: 1
+  user_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
 
-two:
-  hashtag_id: MyString
-  : 1
-  user_id: MyString
-  : 1
+two: 
+  hashtag_id: 1
+  user_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
