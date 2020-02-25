@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+one: 
   hashtag_id: 1
   message_id: 1
 
-two:
+two: 
   hashtag_id: 1
   message_id: 1
