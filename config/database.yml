@@ -1,14 +1,14 @@
 development:
-  adapter: postgree
+  adapter: postgresql
   timeout: 5000
   database: bird_catcher_dev
 
 test:
-  adapter: postgree
+  adapter: postgresql
   timeout: 5000
   database: bird_catcher_hom
 
 production:
-  adapter: postgree
+  adapter: postgresql
   timeout: 5000
   database: bird_catcher

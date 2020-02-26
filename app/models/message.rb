@@ -70,7 +70,7 @@ class Message < ApplicationRecord
   	def self.save_hashtag_tweets(hashtag_id, tweets)
   		tweets.each do |tweet|	
 			message = save_message_from_tweet(tweet)
-			save_hashtag_message(hashtag, message.id)
+			save_hashtag_message(hashtag_id, message.id)
 		end
   	end
 
@@ -88,8 +88,8 @@ class Message < ApplicationRecord
 
   	def self.save_hashtag_message(hashtag_id, message_id)
   		hashtag_message = HashtagMessage.new
-		hashtag_message.hashtag_id = hashtag
-		hashtag_message.message_id = message.id
+		hashtag_message.hashtag_id = hashtag_id
+		hashtag_message.message_id = message_id
 
 		hashtag_message.save
   	end
