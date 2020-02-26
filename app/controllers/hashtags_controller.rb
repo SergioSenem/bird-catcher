@@ -23,6 +23,9 @@ class HashtagsController < ApplicationController
 		else
 			@current_user.user_hashtags.create(user_id: session[:user_id], hashtag_id: @hashtag.id)
 		end
+
+		TweetCollectorJob.perform_later @hashtag.value
+
 		redirect_to user_hashtags_path(@current_user)
 	end
 

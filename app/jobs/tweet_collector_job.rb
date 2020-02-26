@@ -9,7 +9,13 @@ class TweetCollectorJob < ApplicationJob
 	save_tweets(tweets)
   end
 
-  def get_tweets
+  def perform(hashtag)
+  	tweets = get_tweets(hashtag)
+
+  	save_tweets
+  end
+
+  def get_tweets(hashtag = nil)
   	client = Twitter::REST::Client.new do |config|
 	    config.consumer_key        = "FZNGD6vxr9Nu12gY3eW2H9ESw"
 	    config.consumer_secret     = "cvqlxT79AFw90aJoFkTg5qk9HeY8aHte9ZND4Ie5GhRQb2WLrp"
@@ -17,7 +23,11 @@ class TweetCollectorJob < ApplicationJob
 	    config.access_token_secret = "kgsBOK2FtXz3bDXw3NBIQxjXOJmgLlB6J2knhHumVGuNX"
 	end
 
-	hashtags = Hashtag.all
+	if hashtag.nil?
+		hashtags = Hashtag.all
+	else
+		hashtags = Hashtag.find_by_value(hashtag)
+	end
 
 	tweets = Hash.new
 
