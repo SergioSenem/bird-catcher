@@ -14,7 +14,7 @@ class Message < ApplicationRecord
 
 	def self.get_hashtag_messages_from_twitter(hashtag)
 		client = get_twitter_client
-		tweets = get_tweets_by_hashtag(hashtag.value)
+		tweets = get_tweets_by_hashtag(client, hashtag.value)
 		save_hashtag_tweets(hashtag.id, tweets)
 	end
 
