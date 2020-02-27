@@ -21,6 +21,17 @@ Password: senha@123
 * gem 'bootstrap'
 * gem 'jquery-rails'
 
+## Twitter API
+
+This applicatios uses the Twitter API, that means that if you want to run this application, you will need a twitter developer account. With a twitter developer account, create a file "twitter.env" inside the root directory of the application, inside it put your credentials like in the example:
+
+```
+consumer_key        = "YOUR_TWITTER_CONSUMER_KEY"
+consumer_secret     = "YOUR_TWITTER_CONSUMER_SECRET"
+access_token        = "YOUR_TWITTER_ACCESS_TOKEN"
+access_token_secret = "YOUR_TWITTER_ACCESS_SECRET" 
+```
+
 ## Getting started
 
 * Clone the repository
