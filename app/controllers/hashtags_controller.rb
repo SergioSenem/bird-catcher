@@ -2,11 +2,11 @@ class HashtagsController < ApplicationController
 	layout "navbar"
 
 	def index
-		@current_user = User.find(session[:user_id])
+		@current_user = current_user
 	end
 
 	def show
-		@current_user = User.find(session[:user_id])
+		@current_user = current_user
 		@hashtag = @current_user.hashtags.find(params[:id])
 	end
 
@@ -14,7 +14,7 @@ class HashtagsController < ApplicationController
 	end
 
 	def create
-		@current_user = User.find(session[:user_id])
+		@current_user = current_user
 		@hashtag_params = hashtag_parameters
 		@hashtag = Hashtag.find_by_value(@hashtag_params[:value])
 
@@ -23,11 +23,14 @@ class HashtagsController < ApplicationController
 		else
 			@current_user.user_hashtags.create(user_id: session[:user_id], hashtag_id: @hashtag.id)
 		end
+
+		Message.get_hashtag_messages_from_twitter(@hashtag)
+
 		redirect_to user_hashtags_path(@current_user)
 	end
 
 	def destroy
-		@current_user = User.find(session[:user_id])
+		@current_user = current_user
 		@id = params[:id]
 		@user_hashtag = UserHashtag.find_by(user_id: session[:user_id], hashtag_id: @id)
 

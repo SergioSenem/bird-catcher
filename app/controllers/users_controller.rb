@@ -2,30 +2,30 @@ class UsersController < ApplicationController
     layout "navbar"
   
     def index
-        @current_user = User.find(session[:user_id])
+        @current_user = current_user
         @users = User.all
     end
 
     def show
-        @current_user = User.find(session[:user_id])
+        @current_user = current_user
         @user = User.find(params[:id])
     end 
 
     def new
-        @current_user = User.find(session[:user_id])
+        @current_user = current_user
         @url = users_path
         @method = :post
     end
 
     def edit
-        @current_user = User.find(session[:user_id])
+        @current_user = current_user
         @user = User.find(params[:id])
         @url = user_path(@user)
         @method = :put
     end
 
     def create
-        @current_user = User.find(session[:user_id])
+        @current_user = current_user
         parameters = user_parameters
 
         if parameters[:password] == parameters[:password_repeat]
