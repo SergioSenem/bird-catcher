@@ -4,7 +4,8 @@ Bird Catcher is a rails web application that follows tweets with hashtags insert
 
 [Web site published on Heroku](https://bird-catcher.herokuapp.com/)
 
-User: Admin
+User: Admin 
+
 Password: senha@123
 
 ## Ruby and Rails versions
